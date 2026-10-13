@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rio Plast - Todo para el Agricultor y Riego Tecnificado</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        agro: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-agro-900 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1">
+            <span><i class="fa-solid fa-truck-fast mr-2 text-agro-400"></i> ¡Envíos seguros a todo el Perú (Costa, Sierra y Selva)!</span>
+            <span class="flex items-center gap-4">
+                <a href="tel:+51995089720" class="hover:underline"><i class="fa-solid fa-phone mr-1"></i> +51 995089720</a>
+                <span class="hidden md:inline">|</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock mr-1"></i> Lun - Sáb: 8:00 am - 6:00 pm</span>
+            </span>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 bg-agro-700 rounded-xl flex items-center justify-center text-white text-xl font-bold shadow-md shadow-agro-700/20 group-hover:bg-agro-800 transition">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-none">RioPlast</span>
+                    <span class="text-xs font-semibold text-agro-600 uppercase tracking-widest mt-1 block">Suministros agricolas y de riego</span>
+                </div>
+            </a>
+
+            <!-- Search Bar (Desktop) -->
+            <div class="hidden md:flex flex-1 max-w-md mx-6">
+                <div class="relative w-full">
+                    <input type="text" placeholder="Buscar mangueras, aspersores, mallas..." class="w-full bg-slate-100 border border-slate-200 rounded-full py-2.5 pl-11 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-agro-500 focus:bg-white transition">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-400 text-sm"></i>
+                </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/51995089720?text=Hola,%20deseo%20cotizar%20insumos%20agrícolas" target="_blank" class="hidden sm:flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-600/20 transition text-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Cotizar Rápido</span>
+                </a>
+                <button onclick="toggleCart()" class="relative p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+                    <i class="fa-solid fa-cart-shopping text-lg"></i>
+                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-agro-600 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow">3</span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Search -->
+        <div class="md:hidden px-4 pb-3">
+            <div class="relative w-full">
+                <input type="text" placeholder="Buscar productos agrícolas..." class="w-full bg-slate-100 border border-slate-200 rounded-full py-2 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-agro-500">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-xs"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-slate-900 via-agro-950 to-agro-900 text-white py-20 lg:py-28 overflow-hidden">
+        <!-- Background Abstract Glow -->
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-agro-800/80 border border-agro-600/50 text-agro-300 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full shadow-inner">
+                        <i class="fa-solid fa-shield-halved"></i> Calidad Garantizada para el Agro Peruano
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Todo lo que tu campo necesita, <span class="text-transparent bg-clip-text bg-gradient-to-r from-agro-400 to-emerald-300">al mejor precio.</span>
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-normal">
+                        Fabricamos y distribuimos mangueras de alta resistencia, aspersores de gran alcance, bandejas de germinación, mallas raschel y sistemas de riego tecnificado con despacho inmediato a todo el Perú.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#productos" class="w-full sm:w-auto bg-agro-500 hover:bg-agro-600 text-white font-semibold px-8 py-4 rounded-xl shadow-xl shadow-agro-600/30 transition text-center flex items-center justify-center gap-2">
+                            <span>Ver Catálogo Completo</span>
+                            <i class="fa-solid fa-arrow-down text-sm"></i>
+                        </a>
+                        <a href="https://wa.me/51995089720?text=Hola,%20deseo%20una%20cotización%20para%20mi%20proyecto%20agrícola" target="_blank" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl transition text-center flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
+                            <span>Cotizar por WhatsApp</span>
+                        </a>
+                    </div>
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-800 text-center lg:text-left">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-agro-400">+15 Mil</p>
+                            <p class="text-xs text-slate-400">Clientes Satisfechos</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-agro-400">24 / 48h</p>
+                            <p class="text-xs text-slate-400">Envíos a Provincias</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-agro-400">100%</p>
+                            <p class="text-xs text-slate-400">Garantía de Fábrica</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Preview Card -->
+                <div class="relative">
+                    <div class="absolute -inset-1.5 bg-gradient-to-r from-agro-500 to-emerald-400 rounded-3xl blur-xl opacity-30 animate-pulse"></div>
+                    <div class="relative bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl overflow-hidden">
+                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+                            </div>
+                            <span class="text-xs text-slate-400 font-mono">Stock Actualizado 2026</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700/50 hover:border-agro-500 transition group">
+                                <div class="w-12 h-12 rounded-xl bg-agro-500/20 text-agro-400 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition">
+                                    <i class="fa-solid fa-water"></i>
+                                </div>
+                                <h3 class="font-bold text-white text-sm">Riego por Goteo</h3>
+                                <p class="text-xs text-slate-400 mt-1">Cintas y goteros autocompensantes</p>
+                            </div>
+                            <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700/50 hover:border-agro-500 transition group">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition">
+                                    <i class="fa-solid fa-circle-nodes"></i>
+                                </div>
+                                <h3 class="font-bold text-white text-sm">Aspersores Pro</h3>
+                                <p class="text-xs text-slate-400 mt-1">Alcance de 10m hasta 35m</p>
+                            </div>
+                            <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700/50 hover:border-agro-500 transition group">
+                                <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition">
+                                    <i class="fa-solid fa-grip"></i>
+                                </div>
+                                <h3 class="font-bold text-white text-sm">Bandejas Germinación</h3>
+                                <p class="text-xs text-slate-400 mt-1">128, 200 y 288 cavidades</p>
+                            </div>
+                            <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700/50 hover:border-agro-500 transition group">
+                                <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mb-3 group-hover:scale-110 transition">
+                                    <i class="fa-solid fa-network-wired"></i>
+                                </div>
+                                <h3 class="font-bold text-white text-sm">Mallas Raschel</h3>
+                                <p class="text-xs text-slate-400 mt-1">Sombreo 50%, 65%, 80%</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 bg-agro-900/60 border border-agro-500/30 rounded-2xl p-4 flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-agro-500 text-white flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-box-open"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-white">Despachos diarios a agencias</p>
+                                <p class="text-[11px] text-slate-300">Marvisur, Shalom, Móvil Bus y carga pesada.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <span class="text-agro-600 font-bold uppercase tracking-wider text-xs block mb-1">Explore nuestro stock</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Categorías Destacadas</h2>
+                </div>
+                <p class="text-slate-500 text-sm max-w-md mt-2 md:mt-0">Encuentra todos los componentes plásticos, metálicos e insumos para optimizar tus cultivos.</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
+                <!-- Category 1 -->
+                <div onclick="filterCategory('riego')" class="group cursor-pointer bg-slate-50 hover:bg-agro-50 border border-slate-200 hover:border-agro-400 rounded-2xl p-5 text-center transition duration-300 shadow-sm hover:shadow-md">
+                    <div class="w-16 h-16 mx-auto bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-agro-600 text-2xl mb-4 group-hover:scale-110 group-hover:bg-agro-600 group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-agro-700">Riego por Goteo</h3>
+                    <p class="text-[11px] text-slate-500 mt-1">Cintas y accesorios</p>
+                </div>
+
+                <!-- Category 2 -->
+                <div onclick="filterCategory('mangueras')" class="group cursor-pointer bg-slate-50 hover:bg-agro-50 border border-slate-200 hover:border-agro-400 rounded-2xl p-5 text-center transition duration-300 shadow-sm hover:shadow-md">
+                    <div class="w-16 h-16 mx-auto bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-agro-600 text-2xl mb-4 group-hover:scale-110 group-hover:bg-agro-600 group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-circle-notch"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-agro-700">Mangueras</h3>
+                    <p class="text-[11px] text-slate-500 mt-1">Agrícolas y alta presión</p>
+                </div>
+
+                <!-- Category 3 -->
+                <div onclick="filterCategory('aspersores')" class="group cursor-pointer bg-slate-50 hover:bg-agro-50 border border-slate-200 hover:border-agro-400 rounded-2xl p-5 text-center transition duration-300 shadow-sm hover:shadow-md">
+                    <div class="w-16 h-16 mx-auto bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-agro-600 text-2xl mb-4 group-hover:scale-110 group-hover:bg-agro-600 group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-hurricane"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-agro-700">Aspersores</h3>
+                    <p class="text-[11px] text-slate-500 mt-1">Impacto y cañones</p>
+                </div>
+
+                <!-- Category 4 -->
+                <div onclick="filterCategory('germinacion')" class="group cursor-pointer bg-slate-50 hover:bg-agro-50 border border-slate-200 hover:border-agro-400 rounded-2xl p-5 text-center transition duration-300 shadow-sm hover:shadow-md">
+                    <div class="w-16 h-16 mx-auto bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-agro-600 text-2xl mb-4 group-hover:scale-110 group-hover:bg-agro-600 group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-agro-700">Germinación</h3>
+                    <p class="text-[11px] text-slate-500 mt-1">Bandejas y potes</p>
+                </div>
+
+                <!-- Category 5 -->
+                <div onclick="filterCategory('mallas')" class="group cursor-pointer bg-slate-50 hover:bg-agro-50 border border-slate-200 hover:border-agro-400 rounded-2xl p-5 text-center transition duration-300 shadow-sm hover:shadow-md">
+                    <div class="w-16 h-16 mx-auto bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-agro-600 text-2xl mb-4 group-hover:scale-110 group-hover:bg-agro-600 group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-chess-board"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-agro-700">Mallas Raschel</h3>
+                    <p class="text-[11px] text-slate-500 mt-1">Sombreo y cerco</p>
+                </div>
+
+                <!-- Category 6 -->
+                <div onclick="filterCategory('conexiones')" class="group cursor-pointer bg-slate-50 hover:bg-agro-50 border border-slate-200 hover:border-agro-400 rounded-2xl p-5 text-center transition duration-300 shadow-sm hover:shadow-md">
+                    <div class="w-16 h-16 mx-auto bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center text-agro-600 text-2xl mb-4 group-hover:scale-110 group-hover:bg-agro-600 group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-agro-700">Conexiones PVC</h3>
+                    <p class="text-[11px] text-slate-500 mt-1">Uniones, codos y válvulas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Products Section -->
+    <section id="productos" class="py-16 bg-slate-100/70 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <span class="text-agro-600 font-bold uppercase tracking-wider text-xs block mb-1">Más solicitados por agricultores</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Productos Populares</h2>
+                </div>
+                <div class="flex items-center gap-2 mt-4 md:mt-0 overflow-x-auto pb-2">
+                    <button onclick="filterProducts('all')" class="category-btn active px-4 py-2 rounded-xl text-xs font-semibold bg-agro-700 text-white shadow-sm transition">Todos</button>
+                    <button onclick="filterProducts('riego')" class="category-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition">Riego</button>
+                    <button onclick="filterProducts('mangueras')" class="category-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition">Mangueras</button>
+                    <button onclick="filterProducts('germinacion')" class="category-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition">Germinación</button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="product-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col justify-between" data-category="mangueras">
+                    <div>
+                        <div class="relative bg-slate-100 h-48 flex items-center justify-center p-4">
+                            <span class="absolute top-3 left-3 bg-agro-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Más Vendido</span>
+                            <div class="text-agro-700 text-6xl">
+                                <i class="fa-solid fa-circle-notch"></i>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-[11px] font-semibold text-agro-600 uppercase">Mangueras Agrícolas</span>
+                            <h3 class="font-bold text-slate-900 text-base mt-1">Manguera de Riego Polietileno 1/2" - Rollos 100m</h3>
+                            <p class="text-xs text-slate-500 mt-2">Alta resistencia a la intemperie y rayos UV. Ideal para instalaciones en campo abierto.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex items-center justify-between border-t border-slate-100 mt-4">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block">Precio Referencial</span>
+                            <span class="text-base font-extrabold text-slate-900">S/ 120.00 <span class="text-xs font-normal text-slate-500">/ rollo</span></span>
+                        </div>
+                        <button onclick="openWhatsAppQuick('Manguera de Riego Polietileno 1/2\\"')" class="bg-agro-600 hover:bg-agro-700 text-white p-2.5 rounded-xl text-sm shadow-md transition flex items-center gap-1.5 font-medium">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Cotizar</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col justify-between" data-category="riego">
+                    <div>
+                        <div class="relative bg-slate-100 h-48 flex items-center justify-center p-4">
+                            <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Alta Eficiencia</span>
+                            <div class="text-emerald-700 text-6xl">
+                                <i class="fa-solid fa-hurricane"></i>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-[11px] font-semibold text-agro-600 uppercase">Aspersores</span>
+                            <h3 class="font-bold text-slate-900 text-base mt-1">Aspersor Circular Agrícola 3/4" Alcance 14m</h3>
+                            <p class="text-xs text-slate-500 mt-2">Construcción en bronce y zinc reforzado. Rotación uniforme para diversos tipos de cultivos.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex items-center justify-between border-t border-slate-100 mt-4">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block">Precio Referencial</span>
+                            <span class="text-base font-extrabold text-slate-900">S/ 45.00 <span class="text-xs font-normal text-slate-500">/ und</span></span>
+                        </div>
+                        <button onclick="openWhatsAppQuick('Aspersor Circular Agrícola 3/4\\')" class="bg-agro-600 hover:bg-agro-700 text-white p-2.5 rounded-xl text-sm shadow-md transition flex items-center gap-1.5 font-medium">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Cotizar</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col justify-between" data-category="germinacion">
+                    <div>
+                        <div class="relative bg-slate-100 h-48 flex items-center justify-center p-4">
+                            <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Profesional</span>
+                            <div class="text-amber-700 text-6xl">
+                                <i class="fa-solid fa-grip"></i>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-[11px] font-semibold text-agro-600 uppercase">Germinación</span>
+                            <h3 class="font-bold text-slate-900 text-base mt-1">Bandeja de Germinación 200 Cavidades (Pack 10)</h3>
+                            <p class="text-xs text-slate-500 mt-2">Fabricado en plástico virgen termoformado de alta durabilidad para almácigos perfectos.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex items-center justify-between border-t border-slate-100 mt-4">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block">Precio Referencial</span>
+                            <span class="text-base font-extrabold text-slate-900">S/ 85.00 <span class="text-xs font-normal text-slate-500">/ pack 10</span></span>
+                        </div>
+                        <button onclick="openWhatsAppQuick('Bandeja de Germinación 200 Cavidades')" class="bg-agro-600 hover:bg-agro-700 text-white p-2.5 rounded-xl text-sm shadow-md transition flex items-center gap-1.5 font-medium">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Cotizar</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col justify-between" data-category="riego">
+                    <div>
+                        <div class="relative bg-slate-100 h-48 flex items-center justify-center p-4">
+                            <span class="absolute top-3 left-3 bg-blue-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Tecnificado</span>
+                            <div class="text-blue-700 text-6xl">
+                                <i class="fa-solid fa-droplet"></i>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-[11px] font-semibold text-agro-600 uppercase">Riego por Goteo</span>
+                            <h3 class="font-bold text-slate-900 text-base mt-1">Cinta de Riego por Goteo 16mm (Bobina 1000m)</h3>
+                            <p class="text-xs text-slate-500 mt-2">Espaciamiento de goteros cada 20cm o 30cm con caudal de 1.3 L/h regulado.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex items-center justify-between border-t border-slate-100 mt-4">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block">Precio Referencial</span>
+                            <span class="text-base font-extrabold text-slate-900">S/ 280.00 <span class="text-xs font-normal text-slate-500">/ bobina</span></span>
+                        </div>
+                        <button onclick="openWhatsAppQuick('Cinta de Riego por Goteo 16mm')" class="bg-agro-600 hover:bg-agro-700 text-white p-2.5 rounded-xl text-sm shadow-md transition flex items-center gap-1.5 font-medium">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Cotizar</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Shipping Banner -->
+    <section class="py-16 bg-gradient-to-r from-agro-900 via-agro-800 to-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="bg-agro-700 text-agro-200 text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full inline-block">Cobertura Nacional</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Envíos Seguros a Todo el Perú</h2>
+                    <p class="text-slate-300 text-base">
+                        Llegamos con tus pedidos hasta tu fundo, chakra o almacén. Despachamos diariamente a la <strong class="text-white">Costa, Sierra y Selva</strong> con un embalaje resistente que protege tus materiales durante todo el trayecto.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="bg-white/10 p-4 rounded-2xl border border-white/10 flex items-start gap-3">
+                            <i class="fa-solid fa-mountain text-agro-400 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-sm">Sierra y Selva</h4>
+                                <p class="text-xs text-slate-300 mt-1">Coordinación con agencias locales de carga pesada.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white/10 p-4 rounded-2xl border border-white/10 flex items-start gap-3">
+                            <i class="fa-solid fa-city text-agro-400 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-sm">Costa y Valles</h4>
+                                <p class="text-xs text-slate-300 mt-1">Entregas directas y puerta a puerta en principales rutas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment & Security Card -->
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm space-y-6">
+                    <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-shield-check text-agro-400"></i> Métodos de Pago y Confianza
+                    </h3>
+                    <p class="text-xs text-slate-300">Trabajamos de forma transparente con cuentas empresariales y pasarelas seguras.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/10 p-4 rounded-2xl text-center">
+                            <i class="fa-solid fa-building-columns text-2xl text-agro-300 mb-2"></i>
+                            <h4 class="font-bold text-sm">Cuentas Corrientes</h4>
+                            <p class="text-[11px] text-slate-300 mt-0.5">BCP, BBVA, Interbank</p>
+                        </div>
+                        <div class="bg-white/10 p-4 rounded-2xl text-center">
+                            <i class="fa-solid fa-mobile-screen-button text-2xl text-agro-300 mb-2"></i>
+                            <h4 class="font-bold text-sm">Yape y Plin</h4>
+                            <p class="text-[11px] text-slate-300 mt-0.5">Para pagos rápidos y seguros</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-emerald-950/60 border border-emerald-500/30 rounded-2xl flex items-center gap-3">
+                        <i class="fa-solid fa-file-invoice-dollar text-emerald-400 text-2xl shrink-0"></i>
+                        <div class="text-xs">
+                            <span class="font-bold text-white block">Emitimos Factura y Boleta Electrónica</span>
+                            <span class="text-slate-300">Precios especiales para empresas agroindustriales y asociaciones.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Quote Section -->
+    <section class="py-16 bg-white" id="contacto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-agro-600 font-bold uppercase tracking-wider text-xs block mb-1">¿Necesitas asesoría técnica?</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Solicita tu Cotización Personalizada</h2>
+                    <p class="text-slate-600 text-sm mt-3">
+                        Cuéntanos qué materiales necesitas o las medidas de tu terreno. Nuestros especialistas te responderán en minutos con la mejor cotización en mangueras, riego o mallas.
+                    </p>
+
+                    <div class="mt-8 space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-agro-50 text-agro-600 rounded-2xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 block font-medium">Línea de Ventas y Proyectos</span>
+                                <span class="text-base font-bold text-slate-900">+51 995089720</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-agro-50 text-agro-600 rounded-2xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 block font-medium">Correo Electrónico</span>
+                                <span class="text-base font-bold text-slate-900">ventas@agroinsumosperu.com</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-agro-50 text-agro-600 rounded-2xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 block font-medium">Almacén Central</span>
+                                <span class="text-base font-bold text-slate-900">Av. Industrial Agropecuaria - Lima, Perú</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Card -->
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Envíanos un mensaje directo</h3>
+                    <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Nombre Completo</label>
+                            <input type="text" id="nombre" required placeholder="Ej. Juan Pérez" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-agro-500">
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Celular / WhatsApp</label>
+                                <input type="tel" id="telefono" required placeholder="Ej. 987654321" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-agro-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Destino / Ciudad</label>
+                                <input type="text" id="destino" required placeholder="Ej. Arequipa / Piura" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-agro-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">¿Qué productos necesitas?</label>
+                            <textarea id="mensaje" rows="3" required placeholder="Ej. Necesito 3 rollos de manguera de 1/2 y 20 bandejas de germinación..." class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-agro-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-agro-600 hover:bg-agro-700 text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-agro-600/20 transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Enviar Cotización por WhatsApp</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-agro-600 rounded-xl flex items-center justify-center text-white text-lg font-bold">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <span class="text-xl font-extrabold text-white">AgroInsumos</span>
+                    </div>
+                    <p class="text-xs text-slate-400">
+                        Soluciones integrales en mangueras, aspersores, bandejas y sistemas de riego para el desarrollo agrícola del Perú.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white text-sm font-bold uppercase tracking-wider mb-3">Categorías</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:text-white transition">Riego por Goteo</a></li>
+                        <li><a href="#" class="hover:text-white transition">Mangueras Agrícolas</a></li>
+                        <li><a href="#" class="hover:text-white transition">Aspersores de Impacto</a></li>
+                        <li><a href="#" class="hover:text-white transition">Bandejas de Germinación</a></li>
+                        <li><a href="#" class="hover:text-white transition">Mallas Raschel</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-sm font-bold uppercase tracking-wider mb-3">Cobertura</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><span class="text-slate-300">Costa Peruana (Ica, Lima, Piura, Trujillo)</span></li>
+                        <li><span class="text-slate-300">Sierra (Huancayo, Arequipa, Cusco, Cajamarca)</span></li>
+                        <li><span class="text-slate-300">Selva (Tarapoto, Pucallpa, Chanchamayo)</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-sm font-bold uppercase tracking-wider mb-3">Atención al Cliente</h4>
+                    <p class="text-xs text-slate-400 mb-3">Lunes a Sábado de 8:00 am a 6:00 pm</p>
+                    <a href="https://wa.me/51995089720" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-xl text-xs font-semibold transition">
+                        <i class="fa-brands fa-whatsapp"></i> Chat directo con asesor
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs">
+                <p>&copy; 2026 AgroInsumos Perú. Todos los derechos reservados.</p>
+                <div class="flex gap-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-white transition">Términos y Condiciones</a>
+                    <a href="#" class="hover:text-white transition">Política de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart / Quick Notification Modal -->
+    <div id="cart-modal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+            <button onclick="toggleCart()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center pb-4 border-b border-slate-100">
+                <div class="w-12 h-12 bg-agro-100 text-agro-600 rounded-2xl mx-auto flex items-center justify-center text-xl mb-2">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">Resumen de Cotización</h3>
+                <p class="text-xs text-slate-500">Productos seleccionados en tu sesión</p>
+            </div>
+            <div class="py-4 space-y-3">
+                <div class="flex items-center justify-between text-xs bg-slate-50 p-3 rounded-xl">
+                    <div>
+                        <span class="font-bold text-slate-800 block">Manguera de Riego Polietileno 1/2"</span>
+                        <span class="text-slate-500">Cantidad: 2 rollos</span>
+                    </div>
+                    <span class="font-bold text-slate-900">S/ 240.00</span>
+                </div>
+                <div class="flex items-center justify-between text-xs bg-slate-50 p-3 rounded-xl">
+                    <div>
+                        <span class="font-bold text-slate-800 block">Aspersor Circular Agrícola 3/4"</span>
+                        <span class="text-slate-500">Cantidad: 5 unidades</span>
+                    </div>
+                    <span class="font-bold text-slate-900">S/ 225.00</span>
+                </div>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex items-center justify-between font-bold text-sm mb-6">
+                <span>Total Estimado:</span>
+                <span class="text-agro-700 text-base">S/ 465.00</span>
+            </div>
+            <button onclick="checkoutWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-emerald-600/20 transition flex items-center justify-center gap-2 text-sm">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Finalizar Pedido por WhatsApp</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function openWhatsAppQuick(productName) {
+            const text = encodeURIComponent(`Hola, estoy interesado en cotizar el siguiente producto: *${productName}*. ¿Me pueden dar mayor información y costo de envío a provincia?`);
+            window.open(`https://wa.me/51995089720?text=${text}`, '_blank');
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const destino = document.getElementById('destino').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            const text = encodeURIComponent(`Hola, mi nombre es *${nombre}* (Cel: ${telefono}). Destino: *${destino}*.\n\nMensaje/Requerimiento:\n${mensaje}`);
+            window.open(`https://wa.me/51995089720?text=${text}`, '_blank');
+        }
+
+        function filterProducts(category) {
+            // Update active button
+            const buttons = document.querySelectorAll('.category-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-agro-700', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-700');
+            });
+            event.target.classList.remove('bg-white', 'text-slate-700');
+            event.target.classList.add('bg-agro-700', 'text-white');
+
+            // Filter cards
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function filterCategory(cat) {
+            // Scroll to products and filter
+            const section = document.getElementById('productos');
+            section.scrollIntoView({ behavior: 'smooth' });
+            
+            // Find and click matching filter button or filter directly
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (cat === 'all' || card.dataset.category === cat || (cat === 'riego' && card.dataset.category === 'riego')) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'flex'; // Show all relevant or filtered
+                }
+            });
+        }
+    </script>
+</body>
+</html>
